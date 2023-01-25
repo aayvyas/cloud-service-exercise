@@ -34,9 +34,9 @@
 
 ## Dependencies
 
-1. Terraform
+1. Terraform : [install terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 2. GCP Cloud Account
-3. Golang
+3. Golang : [install golang](https://go.dev/doc/install)
 
 ## Connecting Cloud Shell to Private GKE Cluster
 
@@ -59,6 +59,8 @@
 
 ## Deploying the microservice using Helm
 
+source: [helm](https://github.com/aayvyas/cloud-service-exercise/tree/main/helm)
+
 Paste the below code in Cloud Shell CLI
 
 ```bash
@@ -67,6 +69,8 @@ helm install <GIVE_A_NAME_OF_YOUR_CHOICE> . --upgrade
 ```
 
 ## Deploying using kubectl and manifests files
+
+source: [kubernetes](https://github.com/aayvyas/cloud-service-exercise/tree/main/kubernetes)
 
 Paste the below code in Cloud Shell CLI
 
