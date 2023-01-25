@@ -1,0 +1,10 @@
+apiVersion: v2
+name: whereami
+version: "1.1"
+description: Google's sample image used for cloud-services assignment
+keywords:
+  - gcp ,gke, cloud-services
+maintainers: # (optional)
+  - name: Aayush Vyas
+    email: aayush.vyas@publicissapient.com
+appVersion: "v1.1"

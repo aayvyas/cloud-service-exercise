@@ -8,7 +8,7 @@ resource "google_container_cluster" "k8s_cluster" {
 
     # for defining the ip address of the private cluster
     ip_allocation_policy {
-        cluster_ipv4_cidr_block = "10.0.0.0/28"
+        cluster_ipv4_cidr_block = "20.0.0.0/21"
     }
 
     private_cluster_config {
@@ -16,7 +16,7 @@ resource "google_container_cluster" "k8s_cluster" {
         enable_private_nodes = true
         # disabling private endpoint, as to create a public endpoint for cloudshell, as nodes in private cluster have 2 endpoints private and public
         enable_private_endpoint = var.enable_public_endpoint
-        master_ipv4_cidr_block = "10.0.0.0/28"
+        master_ipv4_cidr_block = "10.1.1.0/28"
     }
 
     // specifying the custom vpc network
@@ -68,3 +68,6 @@ resource "google_container_node_pool" "node_pool" {
     }
     
 }
+
+
+

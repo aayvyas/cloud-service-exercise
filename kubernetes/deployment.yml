@@ -15,8 +15,25 @@ spec:
       containers:
         - name: whereami
           image: gcr.io/google-samples/whereami:v1.2.19
+          resources:
+            limits:
+              memory: 200Mi
+              cpu: 100m
+            requests:
+              cpu: 100m
+              memory: 200Mi
           ports:
             - containerPort: 8080
           env:
             - name: METADATA
               value: "whereami"
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 20
