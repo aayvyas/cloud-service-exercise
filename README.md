@@ -69,6 +69,14 @@ terraform apply -auto-approve
 
 ---
 
+## Setting up Cloud Build for the pipeline
+
+```
+In Progress...
+```
+
+---
+
 ## Deploying the microservice using Helm
 
 source: [helm](https://github.com/aayvyas/cloud-service-exercise/tree/main/helm)
