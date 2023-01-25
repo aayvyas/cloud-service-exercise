@@ -61,7 +61,7 @@
 
 On your Cloud Shell CLI, Run the below commands
 
-```
+```bash
 terraform init
 terraform validate
 terraform apply -auto-approve
