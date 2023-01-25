@@ -1,0 +1,25 @@
+steps:
+  - name: "hashicorp/terraform:1.0.0"
+    args:
+      - "-c"
+      - |
+        terraform init 
+        terraform plan
+    id: tf plan
+    entrypoint: sh
+  - name: aayvyas/go-terraform
+    args:
+      - "-c"
+      - |
+        cd ./test && go test
+    id: terratest
+    entrypoint: sh
+  - name: "hashicorp/terraform:1.0.0"
+    args:
+      - "-c"
+      - |
+        terraform apply -auto-approve
+    id: tf apply
+    entrypoint: sh
+options:
+  logging: CLOUD_LOGGING_ONLY
