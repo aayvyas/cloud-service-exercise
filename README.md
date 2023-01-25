@@ -57,6 +57,18 @@
 
 ---
 
+## Provision Infrastructure Using Terraform
+
+On your Cloud Shell CLI, Run the below commands
+
+```
+terraform init
+terraform validate
+terraform apply -auto-approve
+```
+
+---
+
 ## Deploying the microservice using Helm
 
 source: [helm](https://github.com/aayvyas/cloud-service-exercise/tree/main/helm)
