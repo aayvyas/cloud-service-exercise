@@ -1,3 +1,3 @@
 output "static_ip_address" {
-  value = google_compute_address.ip_address.address
+  value = module.terraform-compute-address.static_ip_address
 }

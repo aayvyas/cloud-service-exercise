@@ -1,5 +1,5 @@
 output "private_endpoint" {
 
-    value = google_container_cluster.k8s_cluster.endpoint
+    value = module.terraform-gke-standard-private-cluster.private_endpoint
   
 }
