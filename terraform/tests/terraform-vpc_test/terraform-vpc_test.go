@@ -13,6 +13,7 @@ func TestVpcSubentFirewall(t *testing.T){
 		TerraformDir: "../../examples/example-terraform-vpc",
 		Vars:  map[string]interface{} {
 			"vpc_description" : "vpc created using module written by aayvyas",
+			"project_id" : "burner-aayvyas"
         },
 	})
 	defer terraform.Destroy(t, terraformOptions)

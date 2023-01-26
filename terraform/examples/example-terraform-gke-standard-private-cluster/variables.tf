@@ -1,10 +1,3 @@
-variable "project_id" {
-    description = "your project id"
-    type = string
-    default = "burner-aayvyas"
-  
-}
-
 variable "authorized_cidr" {
     type = string  
     description = "a valid CIDR range ex: xxx.xxx.xxx.xxx/xx which will be authorized to talk to controlplane"
