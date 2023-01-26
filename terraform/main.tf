@@ -6,8 +6,8 @@ module "terraform-gke-standard-private-cluster" {
     depends_on = [
       module.terraform-vpc
     ]
-    network = module.terraform-vpc.vpc_id
-    subnetwork = module.terraform-vpc.subnets["${var.subnet_name}"]
+    network = var.vpc_name
+    subnetwork = var.subnet_name
     source = "./modules/terraform-gke-standard-private-cluster"
     authorized_cidr = var.authorized_cidr
     authorized_cidr_name = var.authorized_cidr_name
