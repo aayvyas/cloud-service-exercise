@@ -1,10 +1,15 @@
 resource "google_compute_network" "test_vpc" {
     name = "test-vpc"
     description = "just for testing the private cluster"
-    auto_create_subnetworks = true
+    auto_create_subnetworks = false
 
 }
-
+resource "google_compute_subnetwork" "test_subnet" {
+    name = "test-subnet"
+    description = "just for testing the private cluster"
+    network = google_compute_network.test_vpc.self_link
+    ip_cidr_range = "10.0.0.0/14"
+}
 module "terraform-gke-standard-private-cluster" {
     depends_on = [
       google_compute_network.test_vpc
