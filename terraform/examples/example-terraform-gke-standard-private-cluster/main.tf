@@ -7,4 +7,5 @@ module "terraform-gke-standard-private-cluster" {
     node_pool_name = var.node_pool_name
     node_count = var.node_count
     dont_enable_public_endpoint = var.dont_enable_public_endpoint
+    machine_type = var.machine_type
 }
