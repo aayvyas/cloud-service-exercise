@@ -21,6 +21,7 @@ resource "google_container_cluster" "k8s_cluster" {
 
 
     network = var.network
+    subnetwork = var.subnetwork
     
     addons_config {
         # enabling http loadbalancing

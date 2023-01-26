@@ -20,6 +20,7 @@ module "terraform-gke-standard-private-cluster" {
       google_compute_subnetwork.test_subnet
     ]
     network = google_compute_network.test_vpc.self_link
+    subnet = google_compute_subnetwork.test_subnet.self_link
     source = "../../modules/terraform-gke-standard-private-cluster"
     authorized_cidr = var.authorized_cidr
     authorized_cidr_name = var.authorized_cidr_name
