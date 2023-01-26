@@ -10,7 +10,7 @@ import (
 func TestVpcSubentFirewall(t *testing.T){
 
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "../examples/",
+		TerraformDir: "../examples/example-terraform-vpc",
 		Vars:  map[string]interface{} {
 			"vpc_description" : "vpc created using module written by aayvyas",
         },
@@ -33,6 +33,5 @@ func TestVpcSubentFirewall(t *testing.T){
 		output:= terraform.Output(t, terraformOptions, "subnet_count" )
 		assert.Equal(t, "2", output)
 	})
-	t.Run("")
 }
 
