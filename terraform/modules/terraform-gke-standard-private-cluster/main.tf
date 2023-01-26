@@ -32,10 +32,10 @@ resource "google_container_cluster" "k8s_cluster" {
         }
     }
 
-    # adding the DNS config, using the k8s-dns
-    dns_config {
-        cluster_dns = "PLATFORM_DEFAULT"
-    }
+    # # adding the DNS config, using the k8s-dns
+    # dns_config {
+    #     cluster_dns = "PLATFORM_DEFAULT"
+    # }
     master_auth {
         client_certificate_config {
             issue_client_certificate = false
@@ -55,7 +55,7 @@ resource "google_container_cluster" "k8s_cluster" {
 
 resource "google_container_node_pool" "node_pool" {
     name = var.node_pool_name
-    location = var.zone
+    location = "us-central1-a"
     cluster = google_container_cluster.k8s_cluster.name
     node_count = var.node_count
 
