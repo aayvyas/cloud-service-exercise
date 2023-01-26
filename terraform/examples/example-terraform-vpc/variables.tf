@@ -1,7 +1,7 @@
 variable "regions_cidr" {
     type = map
     default = {
-        "us-central1" : "10.0.0.0/29",
+        "us-central1" : "10.0.0.0/20",
         "us-east1" : "11.0.0.0/29"
         
 
@@ -41,5 +41,12 @@ variable "firewall_tags" {
 variable "subnet_name" {
     description = "name of the subnet"
     default = "example-subnet"
+  
+}
+
+variable "project_id" {
+    description = "your project id"
+    type = string
+    default = "burner-aayvyas"
   
 }
