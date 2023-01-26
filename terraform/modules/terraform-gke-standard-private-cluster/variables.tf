@@ -28,7 +28,11 @@ variable "dont_enable_public_endpoint" {
     description = "true if you don't want a public endpoint for your master"
 }
 variable "authorized_cidr_name" {
-  type = string
-  description = "name of the authorized cidr"
+    type = string
+    description = "name of the authorized cidr"
   
+}
+variable "machine_type" {
+    type = string
+    description = "machine type for node"
 }

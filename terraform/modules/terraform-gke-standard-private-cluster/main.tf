@@ -61,7 +61,7 @@ resource "google_container_node_pool" "node_pool" {
 
     node_config {
         preemptible  = var.is_premptible
-        machine_type = var.machine-type
+        machine_type = var.machine_type
         
         disk_size_gb = var.disk_size_gb
         disk_type = "pd-standard"
