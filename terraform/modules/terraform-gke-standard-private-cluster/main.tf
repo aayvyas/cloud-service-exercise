@@ -8,7 +8,7 @@ resource "google_container_cluster" "k8s_cluster" {
 
     # for defining the ip address of the private cluster
     ip_allocation_policy {
-        cluster_ipv4_cidr_block = "10.128.3.0/21"
+        cluster_ipv4_cidr_block = "10.128.0.0/21"
     }
 
     private_cluster_config {
