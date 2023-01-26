@@ -2,6 +2,7 @@ package tests
 
 import (
 	"testing"
+
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
 )
@@ -13,7 +14,7 @@ func TestVpcSubentFirewall(t *testing.T){
 		TerraformDir: "../../examples/example-terraform-vpc",
 		Vars:  map[string]interface{} {
 			"vpc_description" : "vpc created using module written by aayvyas",
-			"project_id" : "burner-aayvyas"
+			"project_id" : "burner-aayvyas",
         },
 	})
 	defer terraform.Destroy(t, terraformOptions)

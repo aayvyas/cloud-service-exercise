@@ -42,7 +42,6 @@ variable "node_count" {
 variable "dont_enable_public_endpoint" {
     type = bool
     description = "true if you don't want a public endpoint for your master"
-    default = false
 }
 variable "machine_type" {
     type = string
