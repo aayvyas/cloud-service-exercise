@@ -16,7 +16,7 @@ resource "google_container_cluster" "k8s_cluster" {
         enable_private_nodes = true
         # disabling private endpoint, as to create a public endpoint for cloudshell, as nodes in private cluster have 2 endpoints private and public
         enable_private_endpoint = var.dont_enable_public_endpoint
-        master_ipv4_cidr_block = "10.128.1.0/30"
+        master_ipv4_cidr_block = "10.128.1.0/28"
     }
 
 
