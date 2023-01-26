@@ -1,4 +1,15 @@
+resource "google_compute_network" "test_vpc" {
+    name = "test-vpc"
+    description = "just for testing the private cluster"
+    auto_create_subnetworks = true
+
+}
+
 module "terraform-gke-standard-private-cluster" {
+    depends_on = [
+      google_compute_network.test_vpc
+    ]
+    network = google_compute_network.test_vpc.self_link
     source = "../../modules/terraform-gke-standard-private-cluster"
     authorized_cidr = var.authorized_cidr
     authorized_cidr_name = var.authorized_cidr_name

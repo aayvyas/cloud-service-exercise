@@ -20,7 +20,7 @@ resource "google_container_cluster" "k8s_cluster" {
     }
 
 
-    network = "default"
+    network = var.network
     
     addons_config {
         # enabling http loadbalancing

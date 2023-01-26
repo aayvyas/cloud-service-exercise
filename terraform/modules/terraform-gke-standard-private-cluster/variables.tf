@@ -36,3 +36,7 @@ variable "machine_type" {
     type = string
     description = "machine type for node"
 }
+variable "network" {
+    type = string
+    description = "vpc network in which you want your cluster to be"
+}
