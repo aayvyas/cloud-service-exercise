@@ -12,7 +12,7 @@ import (
 func TestGKE(t *testing.T){
 
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "../../examples/example-terraform-vpc",
+		TerraformDir: "../../examples/example-terraform-gke-standard-private-cluster",
 		Vars:  map[string]interface{} {
 			"project_id" : "burner-aayvyas",
 			"dont_enable_public_endpoint" : false,
