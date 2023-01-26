@@ -41,7 +41,7 @@ variable "network" {
     description = "vpc network in which you want your cluster to be"
 }
 
-variable "subnet" {
+variable "subnetwork" {
     type = string
     description = "vpc subnet in which you want your cluster to be"
 }
