@@ -8,17 +8,6 @@ output "static_ip_address" {
 }
 
 output "vpc_routing_mode" {
-    value = module.terraform-vpc.vpc_routing_mode
-}
-
-output "vpc_description" {
-    value = module.terraform-vpc.vpc_description
-}
-
-output "subnet_count" {
-    value = module.terraform-vpc.subnet_count
-}
-output "vpc_routing_mode" {
     value = google_compute_network.vpc.routing_mode
 }
 
