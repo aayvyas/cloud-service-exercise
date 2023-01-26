@@ -8,7 +8,7 @@ resource "google_container_cluster" "k8s_cluster" {
 
     # for defining the ip address of the private cluster
     ip_allocation_policy {
-        cluster_ipv4_cidr_block = "20.0.0.0/21"
+        cluster_ipv4_cidr_block = "10.128.0.0/21"
     }
 
     private_cluster_config {
@@ -19,11 +19,8 @@ resource "google_container_cluster" "k8s_cluster" {
         master_ipv4_cidr_block = "10.1.1.0/28"
     }
 
-    // specifying the custom vpc network
-    /* TODO
-        add self link to  VPC
-     */
-    network = "my-test-vpc"
+
+    network = "default"
     
     addons_config {
         # enabling http loadbalancing
