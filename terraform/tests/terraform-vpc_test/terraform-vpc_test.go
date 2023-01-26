@@ -10,7 +10,7 @@ import (
 func TestVpcSubentFirewall(t *testing.T){
 
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "../examples/example-terraform-vpc",
+		TerraformDir: "../../examples/example-terraform-vpc",
 		Vars:  map[string]interface{} {
 			"vpc_description" : "vpc created using module written by aayvyas",
         },
