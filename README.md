@@ -94,7 +94,7 @@ Paste the below code in Cloud Shell CLI
 
 ```bash
 cd ./helm
-helm install <GIVE_A_NAME_OF_YOUR_CHOICE> . --upgrade
+helm upgrade <GIVE_A_NAME_OF_YOUR_CHOICE> . --install
 ```
 
 ## Deploying using kubectl and manifests files
