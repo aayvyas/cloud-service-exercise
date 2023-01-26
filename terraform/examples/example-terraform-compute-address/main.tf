@@ -1,3 +1,3 @@
-resource "google_compute_address" "ip_address" {
-  name = "ingress-static-ip"
+module "terraform-compute-address" {
+  source = "../../modules/terraform-compute-address"
 }

@@ -45,8 +45,8 @@ resource "google_container_cluster" "k8s_cluster" {
         
 
         cidr_blocks {
-            cidr_block = "34.124.179.197/32"
-            display_name = "cloud-shell"
+            cidr_block = var.authorized_cidr
+            display_name = var.authorized_cidr_name
         
         }
     }
