@@ -3,9 +3,6 @@ variable "regions_cidr" {
     default = {
         "us-central1" : "10.0.0.0/20",
         "us-east1" : "11.0.0.0/29"
-        
-
-
     }
     description = "key: regions, value: cidr"
 }

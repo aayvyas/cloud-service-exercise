@@ -18,7 +18,7 @@ variable "authorized_cidr_name" {
 variable "is_premptible" {
     type = bool
     description = "true for premptible instances"
-    default = true
+    default = false
 }
 
 variable "disk_size_gb" {

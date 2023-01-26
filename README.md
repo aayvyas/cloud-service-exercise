@@ -57,6 +57,15 @@
 
 ---
 
+## Running unit tests
+
+Paste the below command to run unit test cases in CloudShell CLI
+
+```bash
+cd ./terraform
+go test ./... -v -timeout 60m
+```
+
 ## Provision Infrastructure Using Terraform
 
 On your Cloud Shell CLI, Run the below commands
