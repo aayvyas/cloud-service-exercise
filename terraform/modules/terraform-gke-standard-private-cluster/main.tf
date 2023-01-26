@@ -1,7 +1,7 @@
 # GKE
 resource "google_container_cluster" "k8s_cluster" {
     name = "k8s-cluster"
-    location = var.zone
+    location = "us-central1-a"
     initial_node_count = 2
     remove_default_node_pool = true
 
@@ -15,7 +15,7 @@ resource "google_container_cluster" "k8s_cluster" {
         # no external ip addresses of nodes
         enable_private_nodes = true
         # disabling private endpoint, as to create a public endpoint for cloudshell, as nodes in private cluster have 2 endpoints private and public
-        enable_private_endpoint = var.enable_public_endpoint
+        enable_private_endpoint = var.dont_enable_public_endpoint
         master_ipv4_cidr_block = "10.1.1.0/28"
     }
 
