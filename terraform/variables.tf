@@ -1,3 +1,9 @@
+variable "region" {
+    type = string
+    default = "us-central1"
+    description = "region where you want the cluster to be in"
+}
+
 variable "regions_cidr" {
     type = map
     default = {
