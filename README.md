@@ -40,19 +40,17 @@
 
 ## Connecting Cloud Shell to Private GKE Cluster
 
-1. **Step 1** : Know your Cloud Shell IP using below command
+1. **Step 1** : Paste this in the CloudShell CLI to add your CloudShell's IP to authorized_cidrs in the Control Plane
 
    ```bash
-   dig +short myip.opendns.com @resolver1.opendns.com
+   terraform apply -var authorized_cidr=$(dig +short myip.opendns.com @resolver1.opendns.com) -var project_id=<PROJECT_ID> -auto-approve
    ```
 
-2. **Step 2** : When executing `terraform apply` command, Paste the IP in the variables.tf or Specify it while running the terraform commands
-
-3. **Step 3** : After cluster provisioning run this to Authenticate
+2. **Step 2** : Run this to Authenticate
 
    ```bash
    gcloud container clusters get-credentials k8s-cluster \
-   --project <YOUR_GCP_PROJECT_ID>
+   --project <PROJECT_ID>
    ```
 
 ---
