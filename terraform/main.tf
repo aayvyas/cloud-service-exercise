@@ -1,24 +1,4 @@
-resource "google_storage_bucket" "whereami-backend" {
-  name          = var.backend_gcs_name
-  location      = "US"
-  force_destroy = true
-
-  uniform_bucket_level_access = false
-  public_access_prevention = "enforced"
-
-  versioning {
-    enabled = true
-  }
-
-  labels = {
-    "purpose" : "terraform-backend"
-  }
-}
-
 module "terraform-compute-global-address" {
-  depends_on = [
-    google_storage_bucket.whereami-backend
-  ]
   source = "./modules/terraform-compute-global-address"
 }
 
@@ -40,9 +20,6 @@ module "terraform-gke-standard-private-cluster" {
 }
 
 module "terraform-vpc" {
-    depends_on = [
-      google_storage_bucket.whereami-backend
-    ]
     source = "./modules/terraform-vpc"
     regions_cidr = var.regions_cidr
     vpc_name = var.vpc_name
