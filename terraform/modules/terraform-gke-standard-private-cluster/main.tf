@@ -43,7 +43,8 @@ resource "google_container_cluster" "k8s_cluster" {
         
 
         cidr_blocks {
-            cidr_block = var.authorized_cidr
+            # restricting it to a single ip for now
+            cidr_block = "${var.authorized_cidr}/32"
             display_name = var.authorized_cidr_name
         
         }
