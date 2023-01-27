@@ -78,7 +78,7 @@ terraform apply -auto-approve
 
 ## Setting up Cloud Build for the pipeline
 
-```
+```text
 In Progress...
 ```
 
@@ -120,6 +120,13 @@ kubectl get ingress whereami
 
 Copy the ip address shown, and paste it in the browser address bar, or Paste below command in CLI
 
-```bash
+``` bash
 curl <IP_ADDRESS>
+```
+
+## Benchmarking HPA
+
+```bash
+cd ./scripts
+bash benchmark.sh
 ```
