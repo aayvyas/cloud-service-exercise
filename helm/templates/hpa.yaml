@@ -9,28 +9,28 @@ spec:
     name: {{ .Values.metadata.name }}
   minReplicas: {{ .Values.autoscaler.min }}
   maxReplicas: {{ .Values.autoscaler.max }}
-  # metrics:
-  #   - type: Resource
-  #     resource:
-  #       name: cpu
-  #       target:
-  #         type: Utilization
-  #         averageUtilization: {{ .Values.autoscaler.targetCPU }}
-  #   - type: Pods
-  #     pods:
-  #       metric:
-  #         name: packets-per-second
-  #       target:
-  #         type: AverageValue
-  #         averageValue: 1k
-  #   - type: Object
-  #     object:
-  #       metric:
-  #         name: requests-per-second
-  #       describedObject:
-  #         apiVersion: networking.k8s.io/v1
-  #         kind: Ingress
-  #         name: {{ .Values.metadata.name }}
-  #       target:
-  #         type: Value
-  #         value: 10k
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: {{ .Values.autoscaler.targetCPU }}
+    - type: Pods
+      pods:
+        metric:
+          name: packets-per-second
+        target:
+          type: AverageValue
+          averageValue: 1k
+    - type: Object
+      object:
+        metric:
+          name: requests-per-second
+        describedObject:
+          apiVersion: networking.k8s.io/v1
+          kind: Ingress
+          name: {{ .Values.metadata.name }}
+        target:
+          type: Value
+          value: 10k
