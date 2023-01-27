@@ -22,11 +22,9 @@ spec:
               value: "whereami"
           resources:
             requests:
-              cpu: "250Mi"
-              memory: "128Mi"
+              cpu: "100Mi"
             limits:
-              cpu: "250Mi"
-              memory: "128Mi"
+              cpu: "100Mi"
           readinessProbe:
             tcpSocket:
               port: 8080
