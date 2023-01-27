@@ -1,6 +1,6 @@
 terraform {
  backend "gcs" {
-   bucket  = "whereami-backend-terraform"
+   bucket  = "burner-aayvyas-remote-backend"
    prefix  = "terraform/state"
  }
 }

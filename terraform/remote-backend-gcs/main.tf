@@ -3,9 +3,6 @@ resource "google_storage_bucket" "whereami-backend" {
   location      = "US"
   force_destroy = true
 
-  uniform_bucket_level_access = false
-  public_access_prevention = "enforced"
-
   versioning {
     enabled = true
   }
