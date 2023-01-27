@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: { { .Values.metadata.name | 'whereami' } }
+  name: { { $.Values.metadata.name } }
 spec:
   replicas: 2
   selector:
