@@ -1,17 +1,18 @@
 package tests
 
 import (
+	"regexp"
 	"testing"
+
 	"github.com/gruntwork-io/terratest/modules/terraform"
 	"github.com/stretchr/testify/assert"
-	"regexp"
 )
 
 
 func TestComputeAddress(t *testing.T){
 
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "../../examples/example-terraform-compute-address",
+		TerraformDir: "../../examples/example-terraform-compute-global-address",
 		Vars:  map[string]interface{} {
 			"project_id" : "burner-aayvyas",
         },

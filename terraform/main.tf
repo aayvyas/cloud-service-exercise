@@ -1,5 +1,5 @@
-module "terraform-compute-address" {
-  source = "./modules/terraform-compute-address"
+module "terraform-compute-global-address" {
+  source = "./modules/terraform-compute-global-address"
 }
 
 module "terraform-gke-standard-private-cluster" {
