@@ -22,9 +22,11 @@ spec:
               value: "whereami"
           resources:
             requests:
-              cpu: "250m"
+              cpu: "250Mi"
+              memory: "128Mi"
             limits:
-              cpu: "250m"
+              cpu: "250Mi"
+              memory: "128Mi"
           readinessProbe:
             tcpSocket:
               port: {{ .Values.configurations.port }}
