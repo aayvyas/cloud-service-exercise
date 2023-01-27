@@ -21,8 +21,10 @@ spec:
             - name: METADATA
               value: "whereami"
           resources:
-          requests:
-            cpu: "250m"
+            requests:
+              cpu: "250m"
+            limits:
+              cpu: "250m"
           readinessProbe:
             tcpSocket:
               port: 8080
