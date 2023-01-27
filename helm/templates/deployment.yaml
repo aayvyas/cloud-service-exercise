@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: { { .Values.name } }
+  name: {{ .Values.metadata.name }}
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: { { .Values.metadata.label | 'whereami' } }
+      app: {{ .Values.metadata.label }}
   template:
     metadata:
       labels:
-        app: { { $.Values.metadata.label } }
+        app: {{ .Values.metadata.label }}
     spec:
       containers:
-        - name: { { .Values.metadata.name } }
-          image: { { .Values.configurations.image } }
+        - name: {{ .Values.metadata.name }}
+          image: {{ .Values.configurations.image }}
           ports:
-            - containerPort: { { .Values.configurations.port } }
+            - containerPort: {{ .Values.configurations.port }}
           env:
             - name: METADATA
               value: "whereami"
           readinessProbe:
             tcpSocket:
-              port: { { .Values.configurations.port } }
+              port: {{ .Values.configurations.port }}
             initialDelaySeconds: 5
             periodSeconds: 10
           livenessProbe:
             tcpSocket:
-              port: { { .Values.configurations.port } }
+              port: {{ .Values.configurations.port }}
             initialDelaySeconds: 15
             periodSeconds: 20
