@@ -15,13 +15,6 @@ spec:
       containers:
         - name: { { .Values.metadata.name } }
           image: { { .Values.configurations.image } }
-          # resources:
-          #   limits:
-          #     memory: 100Mi
-          #     cpu: 100m
-          #   requests:
-          #     cpu: 100m
-          #     memory: 100Mi
           ports:
             - containerPort: { { .Values.configurations.port } }
           env:
