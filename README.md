@@ -13,8 +13,8 @@
 - [x] Custom VPC
 - [x] GKE Standard Private Cluster
 - [x] Microservice Deployed using helm
-- [ ] Accessbile using a DNS (http or https)
-- [ ] Unit testing
+- [x] Accessbile using a DNS (http or https)
+- [x] Unit testing
 - [ ] External data source(use python script) to create firewall rules
   - [ ] Allow egress from nodes to GKE master
   - [ ] Allow all communication between nodes and pods
@@ -23,11 +23,11 @@
 (Should Have)
 
 - [ ] Securing microservice using HTTPS
-- [ ] Using remote terraform state
+- [x] Using remote terraform state
 - [ ] Define restrictive network policies for micro-service namepspace - default deny ingress and egress
 - [ ] Automated DNS records creation for the Service/Ingress
 - [ ] Automated Certificate Provisioning for the Service/Ingress
-- [ ] Setup Monitoring using Stack Drivcer
+- [x] Setup Monitoring using Stack Drivcer
 - [ ] Istio Setup
 
 ---
