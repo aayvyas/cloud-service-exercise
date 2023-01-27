@@ -20,6 +20,8 @@ spec:
           env:
             - name: METADATA
               value: "whereami"
+          requests:
+            cpu: "250m"
           readinessProbe:
             tcpSocket:
               port: {{ .Values.configurations.port }}

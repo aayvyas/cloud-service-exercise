@@ -20,6 +20,9 @@ spec:
           env:
             - name: METADATA
               value: "whereami"
+          resources:
+          requests:
+            cpu: "250m"
           readinessProbe:
             tcpSocket:
               port: 8080
