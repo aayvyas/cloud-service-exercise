@@ -1,5 +1,3 @@
-# !/bin/bash
-
 echo 'Apache Benchmark Test'
 echo 'Enter url:'
 read URL
