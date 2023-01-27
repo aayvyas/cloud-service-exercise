@@ -43,7 +43,8 @@
 1. **Step 1** : Paste this in the CloudShell CLI to add your CloudShell's IP to authorized_cidrs in the Control Plane
 
    ```bash
-   terraform apply -var authorized_cidr=$(dig +short myip.opendns.com @resolver1.opendns.com) -var project_id=<PROJECT_ID> -auto-approve
+   terraform apply \ 
+   -var authorized_cidr=$(dig +short myip.opendns.com @resolver1.opendns.com)  -var project_id=<PROJECT_ID> -auto-approve
    ```
 
 2. **Step 2** : Run this to Authenticate
