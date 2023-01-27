@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: { { .Values.metadata.name } }
+  name: { { .Values.metadata.name | 'whereami' } }
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: { { .Values.metadata.label } }
+      app: { { .Values.metadata.label | 'whereami' } }
   template:
     metadata:
       labels:
-        app: { { .Values.metadata.label } }
+        app: { { $.Values.metadata.label } }
     spec:
       containers:
         - name: { { .Values.metadata.name } }
