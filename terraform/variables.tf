@@ -80,7 +80,7 @@ variable "disk_size_gb" {
 variable "node_pool_name" {
     type = string
     description = "name of the node pool"
-    default = "premptible-node-pool"
+    default = "node-pool"
 }
 
 variable "node_count" { 
