@@ -1,10 +1,11 @@
-metadata:
-  name: whereami
-  label: whereami
-configurations:
-  image: gcr.io/google-samples/whereami:v1.2.19
-  port: 8080
-autoscaler:
-  min: 1
-  max: 10
-  targetCPU: 50
+name: whereami
+# metadata:
+#   name: whereami
+#   label: whereami
+# configurations:
+#   image: gcr.io/google-samples/whereami:v1.2.19
+#   port: 8080
+# autoscaler:
+#   min: 1
+#   max: 10
+#   targetCPU: 50
