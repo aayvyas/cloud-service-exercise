@@ -1,3 +1,28 @@
+resource "google_compute_instance" "test-vm" {
+
+  depends_on = [
+    module.terraform-gke-standard-private-cluster
+  ]
+
+  name = "test-vm"
+
+  tags = var.firewall_tags
+
+  machine_type = "f1-micro"
+
+  network_interface {
+    network = var.vpc_name
+    subnetwork = var.subnet_name
+
+  }
+  boot_disk {
+
+    auto_delete = true
+    initialize_params {
+      image = "debian-cloud/debian-11"
+    }
+  }
+}
 module "terraform-compute-global-address" {
   source = "./modules/terraform-compute-global-address"
 }

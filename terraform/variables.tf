@@ -85,7 +85,7 @@ variable "node_pool_name" {
 variable "node_count" { 
     type = number
     description = "node count to start"
-    default = 3
+    default = 1
 }
 
 variable "dont_enable_public_endpoint" {
@@ -96,7 +96,7 @@ variable "dont_enable_public_endpoint" {
 variable "machine_type" {
     type = string
     description = "machine type for node"
-    default = "e2-medium"
+    default = "e2-micro"
 }
 
 
