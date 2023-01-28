@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secret-tls
+data:
+  tls.crt: {{ .Values.security.tls.CertFilePath }}
+  tls.key: {{ .Values.security.tls.PrivateKeyFilePath }}
+type: kubernetes.io/tls

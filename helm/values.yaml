@@ -8,3 +8,7 @@ autoscaler:
   min: 1
   max: 10
   targetCPU: 50
+security:
+  tls:
+    CertFilePath: ../ssl-certificate/tls-cert-base64
+    PrivateKeyFilePath: ../ssl-certificate/private-key-file-base64
