@@ -17,7 +17,7 @@ resource "google_dns_managed_zone" "private-dns" {
 
 resource "google_dns_record_set" "a" {
   name         = "${var.subdomain_name}.${google_dns_managed_zone.private-dns.dns_name}"
-  managed_zone = google_dns_managed_zone.private-dns
+  managed_zone = google_dns_managed_zone.private-dns.name
   type         = "A"
   ttl          = 300
 
