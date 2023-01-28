@@ -12,13 +12,13 @@ spec:
   #       - api.cloudservices.com
   #     secretName: secret-tls
   rules:
-    - host: "api.cloudservices.com" 
-      http:
-        paths:
-          - path: "/"
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: {{ .Values.metadata.name }}
-                port:
-                  number: {{ .Values.configurations.port }}
+    # - host: "api.cloudservices.com" 
+    - http:
+      paths:
+        - path: "/"
+          pathType: ImplementationSpecific
+          backend:
+            service:
+              name: {{ .Values.metadata.name }}
+              port:
+                number: {{ .Values.configurations.port }}
