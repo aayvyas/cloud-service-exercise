@@ -21,4 +21,4 @@ spec:
               service:
                 name: {{ .Values.metadata.name }}
                 port:
-                  number: 443
+                  number: {{ .Values.configurations.port }}

@@ -7,6 +7,6 @@ spec:
   selector:
     app: {{ .Values.metadata.label }}
   ports:
-    - port: 443
+    - port: {{ .Values.configurations.port }}
       targetPort: {{ .Values.configurations.port }}
       
