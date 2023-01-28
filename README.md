@@ -2,7 +2,7 @@
 
 ## GCP Architecture Diagram
 
-![gcp-architecture](./static/gcp-architecture-diagram-new.svg)
+![gcp-architecture](./static/gcp-architecture-diagram.svg)
 
 ---
 
