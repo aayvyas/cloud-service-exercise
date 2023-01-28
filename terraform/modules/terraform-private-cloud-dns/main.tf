@@ -10,7 +10,7 @@ resource "google_dns_managed_zone" "private-dns" {
 
   private_visibility_config {
     networks {
-      network_url = var.network
+      network_url = var.vpc_network
     }
   }
 }
