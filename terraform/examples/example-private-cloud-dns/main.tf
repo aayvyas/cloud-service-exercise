@@ -1,3 +1,6 @@
+data "google_compute_network" "default" {
+  name = "default"
+}
 module "terraform-private-cloud-dns" {
 
     source = "../../modules/terraform-private-cloud-dns"
