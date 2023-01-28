@@ -110,7 +110,7 @@ kubectl apply -f .
 
 ## **View the deployment**
 
-> **NOTE** : As the DNS name used here is a private DNS whose scope is only limited to the VPC, to see the deployment we need to be part of the network. 
+> **NOTE** : As the DNS name used here is a private DNS whose scope is only limited to the VPC, to see the deployment we need to be part of the network.
 
 To view the deployment :
 
@@ -131,5 +131,5 @@ curl https://api.cloudservices.com/ --insecure
 sudo apt-get -y install apache2-utils 
 sudo apt-get -y install apache2 
 
-ab -n 10000 -c 1000 https://api.cloudservices.com/
+ab -n 100000 -c 1000 https://api.cloudservices.com/
 ```
