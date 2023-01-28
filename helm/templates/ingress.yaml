@@ -14,11 +14,11 @@ spec:
   rules:
     # - host: "api.cloudservices.com" 
     - http:
-      paths:
-        - path: "/"
-          pathType: ImplementationSpecific
-          backend:
-            service:
-              name: {{ .Values.metadata.name }}
-              port:
-                number: {{ .Values.configurations.port }}
+        paths:
+          - path: "/"
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: {{ .Values.metadata.name }}
+                port:
+                  number: {{ .Values.configurations.port }}
