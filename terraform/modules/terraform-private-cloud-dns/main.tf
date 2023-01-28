@@ -1,6 +1,6 @@
 resource "google_dns_managed_zone" "private-dns" {
   name        = "k8s-private-dns"
-  dns_name    = var.dns_name
+  dns_name    = "${var.dns_name}."
   description = "Private DNS for cloud-services exercise kubernetes cluster"
   labels = {
 
