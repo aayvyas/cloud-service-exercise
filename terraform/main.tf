@@ -54,3 +54,20 @@ module "terraform-vpc" {
     firewall_tags = var.firewall_tags
     subnet_name = var.subnet_name
 }
+
+data "google_compute_network" "network" {
+  depends_on = [
+    module.terraform-vpc
+  ]
+  id = module.terraform-vpc.vpc_id
+}
+module "terraform-private-cloud-dns" {
+  depends_on = [
+    module.terraform-vpc
+  ]
+  source = "./modules/terraform-private-cloud-dns"
+  dns_name = "cloudservices.com"
+  vpc_network = module.terraform-vpc
+  subdomain_name = "api"
+  ip_address_for_dns = module.terraform-compute-global-address.static_ip_address
+}
