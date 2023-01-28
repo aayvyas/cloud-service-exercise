@@ -28,3 +28,10 @@ variable "ip_address_for_dns" {
 
   
 }
+variable "project_id" {
+    description = "your project id"
+    type = string
+
+  
+}
+
