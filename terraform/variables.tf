@@ -24,7 +24,7 @@ variable "vpc_description" {
 
 variable "tcp_ports" {
     type = list
-    default = ["80","22"]
+    default = ["80","22","443"]
     description = "firewall ports, (http not allowed, ssh from any source '*' or INTERNET not allowed)"
 }
 
