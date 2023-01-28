@@ -13,7 +13,9 @@ resource "google_compute_instance" "test-vm" {
   network_interface {
     network = var.vpc_name
     subnetwork = "${var.vpc_name}-${var.region}-subnet"
-
+    access_config {
+      
+    }
   }
   boot_disk {
 
@@ -22,6 +24,7 @@ resource "google_compute_instance" "test-vm" {
       image = "debian-cloud/debian-11"
     }
   }
+
 }
 module "terraform-compute-global-address" {
   source = "./modules/terraform-compute-global-address"

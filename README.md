@@ -22,31 +22,31 @@
 
 (Should Have)
 
-- [ ] Securing microservice using HTTPS
+- [x] Securing microservice using HTTPS
 - [x] Using remote terraform state
 - [ ] Define restrictive network policies for micro-service namepspace - default deny ingress and egress
-- [ ] Automated DNS records creation for the Service/Ingress
+- [x] Automated DNS records creation for the Service/Ingress
 - [ ] Automated Certificate Provisioning for the Service/Ingress
 - [x] Setup Monitoring using Stack Drivcer
 - [ ] Istio Setup
 
 ---
 
-## Dependencies
+### **Dependencies**
 
 1. Terraform : [install terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 2. GCP Cloud Account
 3. Golang : [install golang](https://go.dev/doc/install)
 
-## Connecting Cloud Shell to Private GKE Cluster
+## **Connecting Cloud Shell to Private GKE Cluster**
 
-1. **Step 1** : Paste this in the CloudShell CLI to add your CloudShell's IP to authorized_cidrs in the Control Plane
+**Step 1** : Paste this in the CloudShell CLI to add your CloudShell's IP to authorized_cidrs in the Control Plane
 
    ```bash
    terraform apply -auto-approve -var authorized_cidr=$(dig +short myip.opendns.com @resolver1.opendns.com) -var project_id=<PROJECT_ID> 
    ```
 
-2. **Step 2** : Run this to Authenticate
+**Step 2** : Run this to Authenticate
 
    ```bash
    gcloud container clusters get-credentials k8s-cluster \
@@ -55,7 +55,7 @@
 
 ---
 
-## Running unit tests
+## **Running unit tests**
 
 Paste the below command to run unit test cases in CloudShell CLI
 
@@ -64,19 +64,19 @@ cd ./terraform
 go test ./... -v -timeout 60m
 ```
 
-## Provision Infrastructure Using Terraform
+## **Provision Infrastructure Using Terraform**
 
 On your Cloud Shell CLI, Run the below commands
 
 ```bash
 terraform init
 terraform validate
-terraform apply -auto-approve
+terraform apply -auto-approve -var authorized_cidr=$(dig +short myip.opendns.com @resolver1.opendns.com) -var project_id=<PROJECT_ID> 
 ```
 
 ---
 
-## Setting up Cloud Build for the pipeline
+## **Setting up Cloud Build for the pipeline**
 
 ```text
 In Progress...
@@ -84,7 +84,7 @@ In Progress...
 
 ---
 
-## Deploying the microservice using Helm
+## **Deploying the microservice using Helm**
 
 source: [helm](https://github.com/aayvyas/cloud-service-exercise/tree/main/helm)
 
@@ -95,7 +95,7 @@ cd ./helm
 helm upgrade <GIVE_A_NAME_OF_YOUR_CHOICE> . --install
 ```
 
-## Deploying using kubectl and manifests files
+## **Deploying using kubectl and manifests files**
 
 source: [kubernetes](https://github.com/aayvyas/cloud-service-exercise/tree/main/kubernetes)
 
@@ -103,30 +103,33 @@ Paste the below code in Cloud Shell CLI
 
 ```bash
 cd ./kubernetes
-kubectl apply -f deployment.yml
-kubectl apply -f service.yml
-kubectl apply -f ingress.yml
+kubectl apply -f .
 ```
 
 ---
 
-## View the deployment
+## **View the deployment**
 
-To view the deployment
+> **NOTE** : As the DNS name used here is a private DNS whose scope is only limited to the VPC, to see the deployment we need to be part of the network. 
 
-```bash
-kubectl get ingress whereami
-```
+To view the deployment :
 
-Copy the ip address shown, and paste it in the browser address bar, or Paste below command in CLI
+**Step 1** : Go to *Compute Engine* > *VM instances*
 
-``` bash
-curl <IP_ADDRESS>
-```
+**Step 2** : Look for a instance **test-vm** , ssh into it
 
-## Benchmarking HPA
+**Step 3** : paste the below command to view the see the output
 
 ```bash
-cd ./scripts
-bash benchmark.sh
+# --insecure , as the TLS certificate is self-signed
+curl https://api.cloudservices.com/ --insecure
+```
+
+### **Benchmarking HPA**
+
+```bash
+sudo apt-get -y install apache2-utils 
+sudo apt-get -y install apache2 
+
+ab -n 10000 -c 1000 https://api.cloudservices.com/
 ```
