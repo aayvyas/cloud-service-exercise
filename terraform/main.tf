@@ -59,7 +59,7 @@ data "google_compute_network" "network" {
   depends_on = [
     module.terraform-vpc
   ]
-  id = module.terraform-vpc.vpc_id
+  name = var.vpc_name
 }
 module "terraform-private-cloud-dns" {
   depends_on = [
@@ -67,7 +67,7 @@ module "terraform-private-cloud-dns" {
   ]
   source = "./modules/terraform-private-cloud-dns"
   dns_name = "cloudservices.com"
-  vpc_network = module.terraform-vpc
+  vpc_network = data.google_compute_network.network
   subdomain_name = "api"
   ip_address_for_dns = module.terraform-compute-global-address.static_ip_address
 }
