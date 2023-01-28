@@ -12,7 +12,7 @@ resource "google_compute_instance" "test-vm" {
 
   network_interface {
     network = var.vpc_name
-    subnetwork = var.subnet_name
+    subnetwork = "${var.vpc_name}-${var.region}-subnet"
 
   }
   boot_disk {
