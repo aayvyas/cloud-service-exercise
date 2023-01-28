@@ -2,7 +2,7 @@ variable "dns_name" {
 
     description = "the domain name you want to use (private) , you don't have to own it"
     type = string
-    default = "cloud-services-k8s"
+    default = "cloudservices.com"
 
 }
 
