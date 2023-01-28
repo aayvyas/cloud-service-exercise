@@ -60,7 +60,7 @@ data "google_compute_network" "network" {
     module.terraform-vpc
   ]
   name = var.vpc_name
-  region = "us-central1"
+  zone = "us-central1"
 }
 module "terraform-private-cloud-dns" {
   depends_on = [
