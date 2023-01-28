@@ -67,7 +67,7 @@ module "terraform-private-cloud-dns" {
   ]
   source = "./modules/terraform-private-cloud-dns"
   dns_name = "cloudservices.com"
-  vpc_network = data.google_compute_network.network
+  vpc_network = data.google_compute_network.network.name
   subdomain_name = "api"
   ip_address_for_dns = module.terraform-compute-global-address.static_ip_address
 }
