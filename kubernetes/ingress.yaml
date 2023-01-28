@@ -7,7 +7,8 @@ metadata:
     kubernetes.io/ingress.global-static-ip-name: "ingress-static-ip"
 spec:
   rules:
-    - http:
+    - host: "api.cloudservices.com"
+      http:
         paths:
           - path: "/"
             pathType: ImplementationSpecific
