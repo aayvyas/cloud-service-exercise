@@ -30,5 +30,8 @@ openssl req -new -key ./ssl-certificate/private-key-file \
     -config ./ssl-certificate/config-file
 cd ./ssl-certificate
 openssl x509 -req     -signkey private-key-file     -in csr-file     -out tls-cert-file     -extfile config-file     -extensions extension_requirements     -days 30
-base64 -w0 tls-cert-file
-base64 -w0 private-key-file
+export TLS_CERT=$(cat tls-cert-file | base64)
+export TLS_PRIVATE_KEY_FILE=$(cat private-key-file | base64)
+
+
+
