@@ -3,8 +3,8 @@ kind: Secret
 metadata:
   name: secret-tls
 data:
-  tls.crt: {{ .Values.security.tls.CertFile }}
-  tls.key: {{ .Values.security.tls.PrivateKeyFile }}
+  tls.crt: {{ .Values.security.tls.CertFile  | base64}} 
+  tls.key: {{ .Values.security.tls.PrivateKeyFile  | base64 }}
     
   
 type: kubernetes.io/tls
