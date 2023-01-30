@@ -15,7 +15,7 @@ func TestPrivateCloudDNS(t *testing.T){
 	ip_address_for_dns := "12.12.12.12"
 
 	terraformOptions := terraform.WithDefaultRetryableErrors(t, &terraform.Options{
-		TerraformDir: "../../examples/example-terraform-gke-standard-private-cluster",
+		TerraformDir: "../../examples/example-terraform-private-cloud-dns",
 		Vars:  map[string]interface{} {
 			"project_id" : "burner-aayvyas",
 			"dns_name" : dns_name,
