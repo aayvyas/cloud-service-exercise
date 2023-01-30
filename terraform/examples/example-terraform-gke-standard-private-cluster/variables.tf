@@ -6,7 +6,7 @@ variable "project_id" {
 variable "authorized_cidr" {
     type = string  
     description = "a valid CIDR range ex: xxx.xxx.xxx.xxx/xx which will be authorized to talk to controlplane"
-    default = "35.198.197.198/32"
+    default = "35.198.197.198"
 }
 
 variable "authorized_cidr_name" {
