@@ -8,5 +8,5 @@ autoscaler:
   min: 1
   max: 10
   targetCPU: 50
-CertFile: $TLS_CERT
-PrivateKeyFile: $TLS_PRIVATE_KEY_FILE
+CertFile: tls-cert-file
+PrivateKeyFile: tls-private-file
