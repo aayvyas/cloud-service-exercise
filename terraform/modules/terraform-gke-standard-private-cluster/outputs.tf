@@ -5,7 +5,7 @@ output "public_endpoint" {
 }
 
 output "authorized_cidr" {
-    value = google_container_cluster.k8s_cluster.master_authorized_networks_config[0].cidr_blocks["cidr_block"]
+    value = google_container_cluster.k8s_cluster.master_authorized_networks_config[0].cidr_blocks
 }
 output "machine_type" {
     value = google_container_node_pool.node_pool.node_config[0].machine_type
