@@ -2,6 +2,7 @@ package tests
 
 import (
 	"regexp"
+	"strconv"
 	"testing"
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
@@ -39,11 +40,7 @@ func TestGKE(t *testing.T){
 	})
 	t.Run("premtibility is configured", func(t *testing.T){
 		output := terraform.Output(t, terraformOptions, "is_premptible")
-		assert.Equal(t, is_premptible, output)
-	})
-	t.Run("machine type is configured properly", func(t *testing.T){
-		output := terraform.Output(t, terraformOptions, "machine_type")
-		assert.Equal(t,machine_type, output)
+		assert.Equal(t, strconv.FormatBool(is_premptible), output)
 	})
 	t.Run("machine type is configured properly", func(t *testing.T){
 		output := terraform.Output(t, terraformOptions, "machine_type")
@@ -51,7 +48,7 @@ func TestGKE(t *testing.T){
 	})
 	t.Run("Specified node count is configured and created in the node pool", func(t *testing.T){
 		output := terraform.Output(t, terraformOptions, "node_count")
-		assert.Equal(t,node_count, output)
+		assert.Equal(t, strconv.Itoa(node_count), output)
 	})
 
 }
