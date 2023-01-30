@@ -11,7 +11,7 @@ output "managed_zone" {
 }
 
 output "ip_address_for_dns" {
-    value = google_dns_record_set.a.rrdatas
+    value = google_dns_record_set.a.rrdatas[0]
 }
 
 output "subdomain_name" {

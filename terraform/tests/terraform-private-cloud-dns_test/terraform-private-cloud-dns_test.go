@@ -10,7 +10,7 @@ import (
 
 func TestPrivateCloudDNS(t *testing.T){
 
-	dns_name := "cloudservices.com"
+	dns_name := "cloudservices.com."
 	subdomain_name := "api"
 	ip_address_for_dns := "12.12.12.12"
 
@@ -42,7 +42,7 @@ func TestPrivateCloudDNS(t *testing.T){
 	
 	t.Run("A DNS record is created with specified subdomain", func(t *testing.T){
 		output := terraform.Output(t, terraformOptions, "subdomain_name")
-		assert.Equal(t, subdomain_name , output)
+		assert.Equal(t, subdomain_name+"."+dns_name , output)
 	})
 }
 
