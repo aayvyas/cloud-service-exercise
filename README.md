@@ -6,9 +6,9 @@
 
 ---
 
-## Requirements
+## **Requirements**
 
-(Must Have)
+### **(Must Have)**
 
 - [x] Custom VPC
 - [x] GKE Standard Private Cluster
@@ -20,7 +20,7 @@
   - [ ] Allow all communication between nodes and pods
 - [x] Setup health checks for microservices
 
-(Should Have)
+#### **(Should Have)**
 
 - [x] Securing microservice using HTTPS
 - [x] Using remote terraform state
@@ -37,6 +37,14 @@
 1. Terraform : [install terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 2. GCP Cloud Account
 3. Golang : [install golang](https://go.dev/doc/install)
+
+---
+
+### **Estimated Cost of Infrastructure**
+
+[Click to view the estimated cost on GCP Pricing Calculator](https://cloud.google.com/products/calculator#id=a7334f59-ebc1-4290-84dd-d3230ea473bf)
+
+---
 
 ## **Connecting Cloud Shell to Private GKE Cluster**
 
