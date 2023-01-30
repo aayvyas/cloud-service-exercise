@@ -6,7 +6,7 @@ variable "project_id" {
 variable "authorized_cidr" {
     type = string  
     description = "a valid CIDR range ex: xxx.xxx.xxx.xxx/xx which will be authorized to talk to controlplane"
-    default = "35.198.197.198"
+    
 }
 
 variable "authorized_cidr_name" {
@@ -18,7 +18,7 @@ variable "authorized_cidr_name" {
 variable "is_premptible" {
     type = bool
     description = "true for premptible instances"
-    default = false
+    
 }
 
 variable "disk_size_gb" {
@@ -36,7 +36,6 @@ variable "node_pool_name" {
 variable "node_count" { 
     type = number
     description = "node count to start"
-    default = 2
 }
 
 variable "dont_enable_public_endpoint" {
@@ -46,5 +45,5 @@ variable "dont_enable_public_endpoint" {
 variable "machine_type" {
     type = string
     description = "machine type for node"
-    default = "e2-micro"
+    
 }

@@ -44,6 +44,10 @@ func TestPrivateCloudDNS(t *testing.T){
 		output := terraform.Output(t, terraformOptions, "subdomain_name")
 		assert.Equal(t, subdomain_name+"."+dns_name+".", output)
 	})
+	t.Run("The specified ip address is mapped to dns", func(t *testing.T){
+		output := terraform.Output(t, terraformOptions, "ip_address_for_dns")
+		assert.Equal(t, ip_address_for_dns, output)
+	})
 }
 
 
