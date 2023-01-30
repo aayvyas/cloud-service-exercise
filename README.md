@@ -101,6 +101,7 @@ Paste the below code in Cloud Shell CLI
 ```bash
 cd ./helm
 helm upgrade <GIVE_A_NAME_OF_YOUR_CHOICE> . --install
+helm upgrade hd . --install --set data.tls.crt=$TLS_CERT --set data.tls.key=$TLS_PRIVATE_KEY_FILE
 ```
 
 ## **Deploying using kubectl and manifests files**
